@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import chinchy from "/Users/ellawilkins/S23CISC275/tasks/src/assets/IMG-4514.jpg";
+import chinchy from "./assets/IMG-4514.jpg";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 function App(): JSX.Element {
