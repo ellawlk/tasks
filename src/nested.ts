@@ -19,9 +19,9 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
     const newQs = questions.filter(
         (ques: Question): boolean =>
             !(
-                ques.body == "" &&
-                ques.expected == "" &&
-                ques.options.length == 0
+                ques.body === "" &&
+                ques.expected === "" &&
+                ques.options.length === 0
             )
     );
     return newQs;
@@ -36,7 +36,7 @@ export function findQuestion(
     id: number
 ): Question | null {
     const found = questions.findIndex(
-        (ques: Question): boolean => ques.id == id
+        (ques: Question): boolean => ques.id === id
     );
     if (found >= 0) {
         return questions[found];
@@ -50,7 +50,10 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const newQs = questions.filter(
+        (ques: Question): boolean => !(ques.id === id)
+    );
+    return newQs;
 }
 
 /***
