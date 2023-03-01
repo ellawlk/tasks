@@ -35,7 +35,14 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const found = questions.findIndex(
+        (ques: Question): boolean => ques.id == id
+    );
+    if (found >= 0) {
+        return questions[found];
+    } else {
+        return null;
+    }
 }
 
 /**
