@@ -286,5 +286,7 @@ export function duplicateQuestionInArray(
         firstHalf.push(doop);
         const secondHalf = deepCopy.slice(targetIndex + 1, deepCopy.length + 1);
         return firstHalf.concat(secondHalf);
+    } else {
+        return [];
     }
 }
