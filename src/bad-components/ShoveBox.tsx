@@ -13,8 +13,13 @@ function ShoveBoxButton({
     );
 }
 
-function MoveableBox(): JSX.Element {
-    const [position, setPosition] = useState<number>(10);
+function MoveableBox({
+    position,
+    setPosition
+}: {
+    position: number;
+    setPosition: React.Dispatch<React.SetStateAction<number>>;
+}) {
     return (
         <div
             data-testid="moveable-box"
@@ -27,24 +32,24 @@ function MoveableBox(): JSX.Element {
                 verticalAlign: "bottom",
                 marginLeft: position + "px"
             }}
-        ></div>
+        >
+            <ShoveBoxButton
+                position={position}
+                setPosition={setPosition}
+            ></ShoveBoxButton>
+        </div>
     );
 }
 
 export function ShoveBox(): JSX.Element {
-    const box = MoveableBox();
+    const [position, setPosition] = useState<number>(10);
 
     return (
         <div>
             <h3>Shove Box</h3>
-            {/* <span>The box is at: {box.position}</span>
             <div>
-                <ShoveBoxButton
-                    position={box.position}
-                    setPosition={box.setPosition}
-                ></ShoveBoxButton>
-                {box}
-            </div> */}
+                <MoveableBox position={position} setPosition={setPosition} />
+            </div>
         </div>
     );
 }
