@@ -14,7 +14,7 @@ export function CheckAnswer({
     return (
         <div>
             <Form.Group controlId="formAnswer">
-                <Form.Label>Check Answer:</Form.Label>
+                <h3>Check Answer:</h3>
                 <Form.Control value={answer} onChange={updateAnswer} />
             </Form.Group>
             <div>
