@@ -41,8 +41,14 @@ export function EditMode(): JSX.Element {
                     style={{ display: editMode ? "block" : "none" }}
                 />
             </Form.Group>
-            {editMode ? <span>{name}</span> : "Your Name"} is{" "}
-            {status ? "" : "not"} a student
+            {!editMode ? (
+                <>
+                    {name ? name : "Your Name"} is {status ? "" : "not "}a
+                    student
+                </>
+            ) : (
+                ""
+            )}
             <Form.Group controlId="formEditMode">
                 <Form.Check
                     type="switch"
