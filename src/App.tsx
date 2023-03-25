@@ -28,6 +28,8 @@ function App(): JSX.Element {
             <hr></hr>
             <GiveAttempts></GiveAttempts>
             <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr></hr>
             <EditMode></EditMode>
             <hr></hr>
             <ChangeColor></ChangeColor>
